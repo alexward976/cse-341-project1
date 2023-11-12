@@ -5,7 +5,7 @@
     "description": "A simple API for CRUD operations on a MongoDb database",
     "version": "1.0.0"
   },
-  "host": "localhost:8080",
+  "host": "https://project1-o08s.onrender.com",
   "basePath": "/",
   "schemes": [
     "http"
