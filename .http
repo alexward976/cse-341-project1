@@ -30,3 +30,34 @@ Content-Type: application/json
 
 ###
 DELETE http://localhost:8080/contacts/delete/6550402c2fc54c72154cd870 HTTP/1.1
+
+###
+GET http://project1-o08s.onrender.com/contacts/ HTTP/1.1
+
+
+###
+POST https://project1-o08s.onrender.com/contacts/add HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Gary",
+    "lastName": "Carter",
+    "email": "gary.carter@gmail.com",
+    "favoriteColor": "Orange",
+    "birthday": "June 4"
+}
+
+###
+PUT https://project1-o08s.onrender.com/contacts/update/655044504f8e8ed046b7ddb6 HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Gary",
+    "lastName": "Carter",
+    "email": "gary.carter21@gmail.com",
+    "favoriteColor": "Orange",
+    "birthday": "June 4"
+}
+
+### 
+DELETE https://project1-o08s.onrender.com/contacts/delete/655044504f8e8ed046b7ddb6 HTTP/1.1
