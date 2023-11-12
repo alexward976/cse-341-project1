@@ -18,7 +18,49 @@ const getById = async (req, res) => {
     })
 }
 
+const addContact = async (req, res) => {
+    const newContact = {
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        favoriteColor: req.body.favoriteColor,
+        birthday: req.body.birthday
+    }
+
+    mongodb.getDatabase().db().collection('contacts').insertOne(newContact).then((result) => {
+        res.json(result);
+    })
+}
+
+const updateContact = async (req, res) => {
+    const contactId = { _id: new ObjectId(req.params.id) }
+    const newValues = {
+        $set: {
+            firstName: req.body.firstName,
+            lastName: req.body.lastName,
+            email: req.body.email,
+            favoriteColor: req.body.favoriteColor,
+            birthday: req.body.birthday
+        }
+    }
+
+    mongodb.getDatabase().db().collection('contacts').updateOne(contactId, newValues).then((result) => {
+        res.json(result);
+    })
+}
+
+const deleteContact = async (req, res) => {
+    const contactId = { _id: new ObjectId(req.params.id) }
+
+    mongodb.getDatabase().db().collection('contacts').deleteOne(contactId).then((result) => {
+        res.json(result);
+    })
+}
+
 module.exports = {
     getAll,
-    getById
+    getById,
+    addContact,
+    updateContact,
+    deleteContact
 }

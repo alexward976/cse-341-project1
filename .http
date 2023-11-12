@@ -3,3 +3,30 @@ GET http://localhost:8080/contacts HTTP/1.1
 
 ### Get by id
 GET http://localhost:8080/contacts/65431956802c9a89d9759e36 HTTP/1.1
+
+###
+POST http://localhost:8080/contacts/add HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Gary",
+    "lastName": "Carter",
+    "email": "gary.carter@gmail.com",
+    "favoriteColor": "Orange",
+    "birthday": "June 4"
+}
+
+###
+PUT http://localhost:8080/contacts/update/6550402c2fc54c72154cd870 HTTP/1.1
+Content-Type: application/json
+
+{
+    "firstName": "Gary",
+    "lastName": "Carter",
+    "email": "gary.carter21@gmail.com",
+    "favoriteColor": "Orange",
+    "birthday": "June 4"
+}
+
+###
+DELETE http://localhost:8080/contacts/delete/6550402c2fc54c72154cd870 HTTP/1.1
